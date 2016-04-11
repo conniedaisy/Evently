@@ -7,9 +7,10 @@ class ListOfEvents extends React.Component {
     console.log(axios)
   }
 
+  // set events = this.props.events
   render() {
     const {
-      events
+      events,
     } = this.props;
     return (
       <div>
