@@ -13,17 +13,17 @@ class UserProfile extends React.Component {
     })
   }
 
-  componentDidMount() {
-    axios.get('/users', {
-      params: this.state.username
-    })                                                                                                                                              })
-    .then(function(response) {
-      console.log(response);
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
-  }
+  // componentDidMount() {
+  //   axios.get('/users', {
+  //     params: this.state.username
+  //   })                                                                                                                                              })
+  //   .then(function(response) {
+  //     console.log(response);
+  //   })
+  //   .catch(function(error) {
+  //     console.log(error);
+  //   });
+  // }
 
   render() {
     return (
