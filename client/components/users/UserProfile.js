@@ -12,6 +12,19 @@ class UserProfile extends React.Component {
       showForm: !this.state.showForm
     })
   }
+
+  componentDidMount() {
+    axios.get('/users', {
+      params: this.state.username
+    })                                                                                                                                              })
+    .then(function(response) {
+      console.log(response);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+  }
+
   render() {
     return (
       <div>
