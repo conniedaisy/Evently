@@ -14,10 +14,12 @@ module.exports = {
         loader: "style!css" 
       },
       {
-        test: /\.js$/,
-        loaders: [ 'babel' ],
-        exclude: /node_modules/,
-        include: __dirname
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel', // 'babel-loader' is also a legal name to reference
+        query: {
+          presets: ['react']
+        }
       },
       {
         test: /\.json$/,
