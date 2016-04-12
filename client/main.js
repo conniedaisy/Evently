@@ -1,3 +1,8 @@
+import React, {Component} from 'react';  
+import { Router, Route, Link, browserHistory, IndexRoute, IndexLink } from 'react-router';
+import UserProfile from './users/UserProfile'
+import EventPage from './events/EventPage'
+
 class App extends React.Component {
   constructor(props) {
     super(props);
