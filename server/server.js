@@ -12,6 +12,7 @@ var session = require('express-session');
 var helper = require('./helpers.js');
 var port = process.env.PORT || 3000;
 
+
 var app = express();
 
 mongoose.connect(dbConfig.url);
@@ -35,7 +36,14 @@ require('./routes-passport')(app, passport); // load our routes and pass in our 
 
 app.use(express.static(__dirname + '/../client'));
 
+// app.get('/*', helper.isLoggedIn, function(req, res) {
+//   console.log('getting bundle');
+//   res.setHeader('Content-Type', 'text/babel');
+//   res.sendFile(path.join(__dirname, '/../build/bundle.js'));
+// });
+
 app.get('/*', helper.isLoggedIn, function(req, res) {
+  // res.setHeader('Content-Type', 'text/html');
   res.sendFile(path.join(__dirname, '/../client/index.html'));
 });
 

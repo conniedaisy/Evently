@@ -1,5 +1,9 @@
 // var Link = ReactRouter.Link;
 
+import Chat from './Chat';
+import Itinerary from './Itinerary';
+import Map from './Map';
+
 const EventPage = props => (
   <div>
     <h2>Your Super Awesome Event</h2>

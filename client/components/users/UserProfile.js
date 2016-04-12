@@ -1,5 +1,7 @@
-// import CreateEventButton from './'
-
+import AddEventForm from './AddEventForm';
+import CreateEventButton from './CreateEventButton';
+import ListOfEvents from './ListOfEvents';
+import UserInfo from './UserInfo';
 
 class UserProfile extends React.Component {
   constructor(props) {

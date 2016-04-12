@@ -1,3 +1,5 @@
+import ItineraryEntry from './ItineraryEntry';
+
 const Itinerary = (props) => (
   <div>
     <h3>Event Itinerary</h3>

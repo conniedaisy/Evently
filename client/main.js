@@ -1,7 +1,7 @@
 import React, {Component} from 'react';  
 import { Router, Route, Link, browserHistory, IndexRoute, IndexLink } from 'react-router';
-import UserProfile from './users/UserProfile'
-import EventPage from './events/EventPage'
+import UserProfile from './components/users/UserProfile'
+import EventPage from './components/events/EventPage'
 
 class App extends React.Component {
   constructor(props) {

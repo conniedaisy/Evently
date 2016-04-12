@@ -1,11 +1,14 @@
 var path = require('path')
 var webpack = require('webpack')
 
+'use strict';
+
 module.exports = {
   entry: "./client/main.js",
   output: {
-    path: __dirname + '/build',
+    path: path.join(__dirname, 'build'),
     filename: "bundle.js"
+    // publicPath: 'http://localhost:3000/events'
   },
   module: {
     loaders: [
@@ -18,7 +21,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel', // 'babel-loader' is also a legal name to reference
         query: {
-          presets: ['react']
+          presets: ['react', 'es2015']
         }
       },
       {
