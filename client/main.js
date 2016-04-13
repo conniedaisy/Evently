@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Route, Link, hashHistory } from 'react-router';
 import UserProfile from './components/users/UserProfile.js';
 import EventPage from './components/events/EventPage.js';
+// import addEventForm from './components/users/addEventForm.js';
 import $ from 'jquery';
 
 require('./styles/styles.css');
@@ -57,8 +59,6 @@ class App extends React.Component {
     return (
       <div className="container">
         <div id="sidebar">
-          <h3>{username}</h3>
-          <a href='/logout'>logout</a>
           <UserProfile username={username} events={events} />
         </div>
         <div id="header">
@@ -72,8 +72,19 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+  <Router history={hashHistory}>
+    <Route path='/' component={App}>
+    <Route path='/events' component={App}>
+    </Route>
+  </Router>,
+  document.getElementById('app')
+);
 
+
+/*
+
+*/
 
 // class App extends React.Component {
 //   constructor(props) {
