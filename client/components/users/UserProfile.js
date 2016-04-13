@@ -3,7 +3,7 @@ import CreateEventButton from './createEventButton.js';
 import AddEventForm from './addEventForm.js';
 import ListOfEvents from './listOfEvents.js';
 import EventPage from './../events/EventPage.js';
-import { Router, Route, Link, hashHistory } from 'react-router';
+import { Link } from 'react-router';
 
 
 export default class UserProfile extends React.Component {
@@ -39,6 +39,10 @@ export default class UserProfile extends React.Component {
   }
 
   /*render() {
+            <li showForm={this.showForm.bind(this)}>
+              <Link to="/eventform">Create An Event</Link>
+              {this.state.showForm ? <AddEventForm showForm={this.showForm.bind(this)}/> : null}
+            </li>
     return (
       <div>
       HWLLO
@@ -48,7 +52,6 @@ export default class UserProfile extends React.Component {
       </div>
 
       <Links />
-            <li><Link to="/eventform">Create An Event</Link></li>
 
       
     )

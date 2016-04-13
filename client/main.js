@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link, hashHistory } from 'react-router';
+import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
 import UserProfile from './components/users/UserProfile.js';
 import EventPage from './components/events/EventPage.js';
-// import addEventForm from './components/users/addEventForm.js';
+import AddEventForm from './components/users/addEventForm.js';
 import $ from 'jquery';
 
 require('./styles/styles.css');
@@ -13,9 +13,10 @@ class App extends React.Component {
     super(props);
     this.state = {
       username: 'Megan',
-      events: [],
+      events: [this.state.event],
       event: {
         url: '/api/events/abc',
+        name: 'PARTY',
         itinerary: [
           {
             time: '1:45 pm',
@@ -65,7 +66,7 @@ class App extends React.Component {
           <h1>Evently.io</h1>
         </div>
         <div id="content">
-          <EventPage event={event} />
+          {this.props.children}
         </div>
       </div>
     );
@@ -73,9 +74,10 @@ class App extends React.Component {
 }
 
 ReactDOM.render(
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path='/' component={App}>
-    <Route path='/events' component={App}>
+      <IndexRoute component={AddEventForm} />
+      <Route path='events/:eventname' component={EventPage} />
     </Route>
   </Router>,
   document.getElementById('app')
@@ -84,6 +86,7 @@ ReactDOM.render(
 
 /*
 
+    // <Route path='/' component={App}>
 */
 
 // class App extends React.Component {
