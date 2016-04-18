@@ -1,3 +1,3 @@
 module.exports = {
-  'url' : 'mongodb://localhost/milkshake'
+  'url' : 'mongodb://159.203.208.160/milkshake'
 };
