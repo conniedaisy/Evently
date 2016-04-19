@@ -6,7 +6,7 @@ const Event = (props) => (
     <div>
       <Link to={`/events/${props.event.url}`}
         onClick={() => {
-          this.props.socket.emit('join room', url);
+          props.socket.emit('join room', props.event.url);
           $(".button-collapse").sideNav('hide')
         }}
         className="collection-item"
